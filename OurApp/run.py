@@ -1,3 +1,7 @@
+import sys
+sys.path.append(".")
+
+import OurApp
 from flask import Flask
 from OurApp import db
 # instance of flask application

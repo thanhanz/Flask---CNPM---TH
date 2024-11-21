@@ -27,7 +27,8 @@ class UserRole(Enum):
 
 class User(BaseModel):
     __abstract__ = True
-    fullName = Column(String(100), nullable=False)
+    firstName = Column(String(100), nullable=False)
+    lastName = Column(String(100), nullable=False)
     email = Column(String(50))
     phoneNumber = Column(String(20), nullable=False)
     gender = Column(Integer, nullable=False)
@@ -49,13 +50,14 @@ class Customer(User):
 
 
     def __str__(self):
-        return self.fullName
+        return self.firstName + self.lastName
 
 class Account(BaseModel):
     username = Column(String(50), nullable=False)
     password = Column(String(100), nullable=False)
     #ENUM
     userRole = Column(EnumRole(UserRole), default=UserRole.CUSTOMER)
+
     #rela
     customer=relationship('Customer', back_populates='account', lazy=True)
     customer_id = Column(String(20), ForeignKey(Customer.id), nullable=False)
@@ -111,7 +113,7 @@ class Employee(User):
     renting=relationship('Renting', backref='renting', lazy=True)
 
     def __str__(self):
-        return self.fullName
+        return self.firstName + self.lastName
 
 
 class BookingMethod(BaseModel):

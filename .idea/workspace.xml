@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8a89749-ce83-4ebb-9662-1bd07c83fbd4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OurApp/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/dao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/index.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/templates/layout/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/templates/layout/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/templates/layout/header.html" afterDir="false" />
+    <list default="true" id="a8a89749-ce83-4ebb-9662-1bd07c83fbd4" name="Changes" comment="add structure off project">
+      <change afterPath="$PROJECT_DIR$/OurApp/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OurApp/static/css/regist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OurApp/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OurApp/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/templates/layout/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/layout/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/templates/layout/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/layout/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/templates/layout/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/layout/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +33,26 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;thanhanz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/thanhanz/Flask_CNPM_QLKS.git&quot;,
+    &quot;accountId&quot;: &quot;b008677a-c9a5-40bf-bd69-d16c556a8436&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/venv/pyvenv.cfg" root0="SKIP_INSPECTION" />
   </component>
@@ -49,6 +71,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Python.__init__.executor": "Run",
     "Python.main.executor": "Run",
     "Python.models.executor": "Run",
     "Python.run.executor": "Run",
@@ -56,7 +79,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "D:/PrjQLKS/HotelManageApp",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Python"
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -65,7 +88,29 @@
       <recent name="D:\PrjQLKS\HotelManageApp" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.models">
+  <component name="RunManager" selected="Python.__init__">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="HotelManageApp" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/OurApp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OurApp/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="HotelManageApp" />
       <option name="ENV_FILES" value="" />
@@ -135,8 +180,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.models" />
+        <item itemvalue="Python.__init__" />
         <item itemvalue="Python.run" />
+        <item itemvalue="Python.models" />
       </list>
     </recent_temporary>
   </component>
@@ -156,6 +202,19 @@
       <option name="presentableId" value="Default" />
       <updated>1731481274584</updated>
     </task>
+    <task id="LOCAL-00001" summary="add structure off project">
+      <option name="closed" value="true" />
+      <created>1732002322799</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732002322799</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add structure off project" />
+    <option name="LAST_COMMIT_MESSAGE" value="add structure off project" />
   </component>
 </project>

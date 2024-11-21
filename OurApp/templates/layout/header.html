@@ -1,10 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% block css %}
+ <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+{% endblock %}
 
-</body>
-</html>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-lg-3 py-lg-3 shadow-sm sticky-top">
+  <div class="container-fluid">
+
+    <a class="navbar-brand fw-bold fs-5 h-font" href="index.html" style="font-family: 'Merienda'">DREAM HOTEL</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02 ">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-around">
+        <li class="nav-item">
+          <a class="nav-link active me-2" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item me-2">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+
+        <li class="nav-item me-2">
+          <a class="nav-link" href="#">Rooms</a>
+        </li>
+
+        <li class="nav-item me-2">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+
+
+      </ul>
+
+
+      <form class="d-flex">
+        <button class="btn btn-outline-success shadow-none fw-bold text-white me-lg-2 me-3" type="submit">Login</button>
+      </form>
+
+    </div>
+  </div>
+</nav>
