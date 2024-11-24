@@ -1,4 +1,4 @@
-
+{% extends 'layout/base.html' %}
 {% block js %}
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 {% endblock %}
 
+
+{% block content %}
 <section class="h-100 gradient-form" style="background-color: #eee;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -25,7 +27,7 @@
                   <h4 class="mt-1 mb-5 pb-1 fw-bold" style="font-family: 'Merienda'">We are Dream Hotel</h4>
                 </div>
 
-                <form method="POST">
+                <form action= "/login" method="POST">
                     <p>Please login to your account</p>
 
                     <div data-mdb-input-init class="form-outline mb-4">
@@ -37,21 +39,20 @@
                       <input type="password" id="password" name="password" class="form-control"
                        placeholder="Password"/>
                   </div>
-                </form>
+
 
                   <div class="d-grid gap-2">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log in</button>
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log in</button>
                     <a class="text-muted text-end" href="#"><i>Forgot password?</i></a>
                   </div>
+                 </form>
+
 
                     <br>
 
-
                   <div class="d-flex align-items-center justify-content-center pb-4">
                     <p class="mb-0 me-2">Don't have an account?</p>
-                    <a href="{{ url_for('user_register') }}" class="btn btn-outline-danger">Sign up</a>
-
-
+                    <a href="{{ url_for('register') }}" class="btn btn-outline-danger">Sign up</a>
                   </div>
 
 
@@ -72,3 +73,4 @@
     </div>
   </div>
 </section>
+{% endblock %}

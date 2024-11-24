@@ -12,7 +12,7 @@ from flask_migrate import Migrate
 
 class BaseModel(db.Model):
     __abstract__ = True
-    id = Column(String(20), primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     createdAt = Column(DateTime, default=datetime.now())
     updatedAt = Column(DateTime, default=datetime.now())
     active = Column(Boolean, default=True)
@@ -25,17 +25,23 @@ class UserRole(Enum):
 #class Role
 
 
-class User(BaseModel):
+class User(BaseModel, UserMixin):
     __abstract__ = True
     firstName = Column(String(100), nullable=False)
     lastName = Column(String(100), nullable=False)
     email = Column(String(50))
     phoneNumber = Column(String(20), nullable=False)
-    gender = Column(Integer, nullable=False)
+    gender = Column(String(10), nullable=False)
     avatar = Column(String(100))
     citizenIdentificationCard = Column(String(20), nullable=False)
     dateOfBirth = Column(DateTime)
 
+    @property
+    def is_active(self):
+        return self.active
+
+    def get_id(self):
+        return str(self.id)
 
 class Customer(User):
     # (One - to - one) relationship -> use back_populates
@@ -46,23 +52,25 @@ class Customer(User):
 
     #(One-to-Many)
     booking=relationship('Booking', backref='customer')
-    renting_detail=relationship('renting_detail', backref='customer', lazy=True)
+    renting_detail=relationship('RentingDetail', backref='customer', lazy=True)
 
 
     def __str__(self):
         return self.firstName + self.lastName
 
+
+
 class Account(BaseModel):
-    username = Column(String(50), nullable=False)
+    username = Column(String(50), nullable=False, unique=True)
     password = Column(String(100), nullable=False)
     #ENUM
     userRole = Column(EnumRole(UserRole), default=UserRole.CUSTOMER)
 
     #rela
     customer=relationship('Customer', back_populates='account', lazy=True)
-    customer_id = Column(String(20), ForeignKey(Customer.id), nullable=False)
+    customer_id = Column(Integer, ForeignKey(Customer.id), nullable=False)
     employee=relationship('Employee', back_populates='account', lazy=True)
-    employee_id=Column(String(20), ForeignKey('employee.id'))
+    employee_id=Column(Integer, ForeignKey('employee.id'))
 
     def __str__(self):
         return self.username
@@ -82,7 +90,7 @@ class Address(BaseModel):
     address = Column(String(50), nullable=False)
     city = Column(String(50), nullable=False)
 
-    country_id=Column(String(20), ForeignKey(Country.id), nullable=False)
+    country_id=Column(Integer, ForeignKey(Country.id), nullable=False)
 
     def __str__(self):
         return self.address
@@ -95,8 +103,8 @@ class Passport(BaseModel):
 
     #
     customer = relationship('Customer', back_populates='passport', lazy=True)
-    customer_id = Column(String(20), ForeignKey(Customer.id), nullable=False)
-    country_id=Column(String(20), ForeignKey(Country.id), nullable=False)
+    customer_id = Column(Integer, ForeignKey(Customer.id), nullable=False)
+    country_id=Column(Integer, ForeignKey(Country.id), nullable=False)
 
     def __str__(self):
         return self.ppNumber
@@ -141,8 +149,8 @@ class BookingDetail(BaseModel):
     numberRooms = Column(Integer, default=1)
     note = Column(String(50))
     #ForeignKey
-    booking_id = Column(String(20), ForeignKey('booking.id'), nullable=False)
-    roomType_id = Column(String(20), ForeignKey('room_type.id'), nullable=False)
+    booking_id = Column(Integer, ForeignKey('booking.id'), nullable=False)
+    roomType_id = Column(Integer, ForeignKey('room_type.id'), nullable=False)
 
     #Unique config
     __table_args__=(UniqueConstraint('booking_id', 'roomType_id',name='booking_roomType_unique'),)
@@ -157,10 +165,10 @@ class Booking(BaseModel): #Phieu dat
     deposit = Column(Double)
 
     #ForeignKey
-    customer_id = Column(String(20), ForeignKey(Customer.id), nullable=False)
-    employee_id=Column(String(20), ForeignKey(Employee.id), nullable=False)
-    bookingMethod_id=Column(String(20), ForeignKey(BookingMethod.id), nullable=False)
-    bookingStatus_id=Column(String(20), ForeignKey(BookingStatus.id), nullable=False)
+    customer_id = Column(Integer, ForeignKey(Customer.id), nullable=False)
+    employee_id=Column(Integer, ForeignKey(Employee.id), nullable=False)
+    bookingMethod_id=Column(Integer, ForeignKey(BookingMethod.id), nullable=False)
+    bookingStatus_id=Column(Integer, ForeignKey(BookingStatus.id), nullable=False)
 
     #Relation (n-n)
     roomTypes=relationship('RoomType', secondary='booking_detail', back_populates='bookings' )
@@ -186,9 +194,9 @@ class RoomType(BaseModel):
 #TABLE (n-n)
 class RentingDetail(BaseModel):
     #ForeignKey
-    room_id = Column(String(20), ForeignKey('room.id'), nullable=False)
-    renting_id = Column(String(20), ForeignKey('renting.id'), nullable=False)
-    customer_id = Column(String(20), ForeignKey('customer.id'), nullable=False)
+    room_id = Column(Integer, ForeignKey('room.id'), nullable=False)
+    renting_id = Column(Integer, ForeignKey('renting.id'), nullable=False)
+    customer_id = Column(Integer, ForeignKey('customer.id'), nullable=False)
 
     #Unique cfg
     __table_args__=(UniqueConstraint('room_id', 'renting_id',name='room_renting_unique'),)
@@ -217,7 +225,7 @@ class Service(BaseModel):
     unit = Column(Double)
 
     invoiceDetail=relationship('InvoiceDetail', backref='service', lazy=True)
-    serviceType_id=Column(String(20), ForeignKey(ServiceType.id), nullable=False)
+    serviceType_id=Column(Integer, ForeignKey(ServiceType.id), nullable=False)
 
     def __str__(self):
         return self.name
@@ -231,8 +239,8 @@ class Invoice(BaseModel):
     discount = Column(Double)
 
     #1-n (Aggregation)
-    paymentMethod_id=Column(String(20), ForeignKey(PaymentMethod.id), nullable=False)
-    employee_id=Column(String(20),ForeignKey(Employee.id), nullable=False)
+    paymentMethod_id=Column(Integer, ForeignKey(PaymentMethod.id), nullable=False)
+    employee_id=Column(Integer,ForeignKey(Employee.id), nullable=False)
 
     #1-1
     renting=relationship('Renting',back_populates='invoice', uselist=False, lazy=False)
@@ -249,10 +257,10 @@ class InvoiceDetail(BaseModel):
     totalMoney = Column(Double)
 
     #ForeignKey
-    invoice_id=Column(String(20), ForeignKey(Invoice.id), nullable=False)
+    invoice_id=Column(Integer, ForeignKey(Invoice.id), nullable=False)
     invoice=relationship('Invoice', back_populates='details', lazy=True)
 
-    service_id=Column(String(20), ForeignKey(Service.id), nullable=False)
+    service_id=Column(Integer, ForeignKey(Service.id), nullable=False)
 
 
 
@@ -262,9 +270,9 @@ class Renting(BaseModel): #Phiếu thuê
     note = Column(String(100))
 
     #ForeignKey
-    employee_id=Column(String(20),ForeignKey(Employee.id), nullable=False)
-    customer_id = Column(String(20), ForeignKey(Customer.id), nullable=False)
-    invoice_id = Column(String(20), ForeignKey(Invoice.id), nullable=False)
+    employee_id=Column(Integer,ForeignKey(Employee.id), nullable=False)
+    customer_id = Column(Integer, ForeignKey(Customer.id), nullable=False)
+    invoice_id = Column(Integer, ForeignKey(Invoice.id), nullable=False)
 
     #1-1
     invoice = relationship('Invoice', back_populates='renting', lazy=True)
@@ -291,8 +299,8 @@ class Room(BaseModel):
     # Rela
     renting = relationship('Renting', back_populates='rooms', secondary='renting_detail')
     # ForeignKey
-    roomStatus_id = Column(String(20), ForeignKey(RoomStatus.id))
-    roomType_id = Column(String(20), ForeignKey(RoomType.id), nullable=False)
+    roomStatus_id = Column(Integer, ForeignKey(RoomStatus.id))
+    roomType_id = Column(Integer, ForeignKey(RoomType.id), nullable=False)
 
     def __str__(self):
         return self.name

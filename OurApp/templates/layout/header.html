@@ -5,16 +5,16 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-lg-3 py-lg-3 shadow-sm sticky-top">
   <div class="container-fluid">
-
-    <a class="navbar-brand fw-bold fs-5 h-font" href="index.html" style="font-family: 'Merienda'">DREAM HOTEL</a>
+    <a class="navbar-brand fw-bold fs-5 h-font" href="{{ url_for('home') }}" style="font-family: 'Merienda'">DREAM HOTEL</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02 ">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-around">
+      <ul class="navbar-nav mb-2 mb-lg-0 justify-content-around ms-auto">
+
         <li class="nav-item">
-          <a class="nav-link active me-2" aria-current="page" href="#">Home</a>
+          <a class="nav-link  active me-2" href="{{ url_for('home') }}">Home</a>
         </li>
         <li class="nav-item me-2">
           <a class="nav-link" href="#">About Us</a>
@@ -29,12 +29,23 @@
         </li>
 
 
-      </ul>
+      {% if current_user.is_authenticated %}
+      <li class="nav-item me-2">
+            <a class="nav-link text-warning" href="/">
+              <img src="{{ current_user.avatar }}" width="50" class="rounded-circle" />
+                        Hello, {{ current_user.account.username }}.
+            </a>
+      </li>
 
-
-      <form class="d-flex">
+      <form class="d-flex me-2" action="{{url_for('user_logout')}}">
+        <button class="btn btn-outline-danger shadow-none fw-bold text-white me-lg-2 me-3" type="submit">Logout</button>
+      </form>
+      {% else %}
+      <form class="d-flex" action="{{url_for('user_login')}}">
         <button class="btn btn-outline-success shadow-none fw-bold text-white me-lg-2 me-3" type="submit">Login</button>
       </form>
+      </ul>
+      {% endif %}
 
     </div>
   </div>
