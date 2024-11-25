@@ -14,11 +14,15 @@ from flask_login import login_user, logout_user, current_user
 
 @app.route("/")
 def home():
+    rts = dao.load_list_roomtypes()
 
-    return render_template('index.html')
+    return render_template('index.html', roomtypes=rts)
 
 @app.route("/login", methods=['GET', 'POST'])
 def user_login():
+
+    err_msg=None
+
     if request.method.__eq__('POST'):
         username=request.form.get('username')
         password = request.form.get('password')
@@ -29,8 +33,10 @@ def user_login():
             u = dao.get_customer_by_id(account.customer_id)
             login_user(u)
             return redirect("/")
+        else:
+            err_msg="Your account isn't exist or wrong passworrd!, do again!!"
 
-    return render_template('login.html')
+    return render_template('login.html', err_msg=err_msg)
 
 @login.user_loader
 def user_load(user_id):

@@ -293,13 +293,12 @@ class Room(BaseModel):
     name = Column(String(20), nullable=False)
     note = Column(String(50))
     floor = Column(Integer)
-    area = Column(Double)
-    thumbnail = Column(String(100))
+    thumbnail = Column(String(100), nullable=False)
 
     # Rela
     renting = relationship('Renting', back_populates='rooms', secondary='renting_detail')
     # ForeignKey
-    roomStatus_id = Column(Integer, ForeignKey(RoomStatus.id))
+    roomStatus_id = Column(Integer, ForeignKey(RoomStatus.id), default=3)
     roomType_id = Column(Integer, ForeignKey(RoomType.id), nullable=False)
 
     def __str__(self):
@@ -308,7 +307,83 @@ class Room(BaseModel):
 
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()
+        # db.create_all()
+        rooms= [{
+                "id": 1,
+                "name": "ST.01",
+                "note": "Studio room...",
+                "floor": 2,
+                "thumbnail": "image/stuRoom.jpg",
+                "roomType_id": 3
+            }, {
+                "id": 2,
+                "name": "ST.02",
+                "note": "Studio room,...",
+                "floor": 2,
+                "thumbnail": "image/stuRoom.jpg",
+                "roomType_id": 3
+            }, {
+                "id": 3,
+                "name": "ST.03",
+                "note": "Studio room...",
+                "floor": 2,
+                "thumbnail": "image/stuRoom.jpg",
+                "roomType_id": 3
+            }, {
+                "id": 4,
+                "name": "STAN.01",
+                "note": "Standard room,...",
+                "floor": 2,
+                "thumbnail": "image/staRoom.jpg",
+                "roomType_id": 4
+            }, {
+                "id": 5,
+                "name": "STAN.02",
+                "note": "Standard room,...",
+                "floor": 3,
+                "thumbnail": "image/staRoom.jpg",
+                "roomType_id": 4
+            }, {
+                "id": 6,
+                "name": "STAN.03",
+                "note": "Standard room,...",
+                "floor": 3,
+                "thumbnail": "image/staRoom.jpg",
+                "roomType_id": 4
+            }, {
+                "id": 7,
+                "name": "PRE.01",
+                "note": "President room,...",
+                "floor": 7,
+                "thumbnail": "image/preRoom.jpg",
+                "roomType_id": 5
+            }, {
+                "id": 8,
+                "name": "PRE.02",
+                "note": "President room,...",
+                "floor": 8,
+                "thumbnail": "image/preRoom2.jpg",
+                "roomType_id": 5
+            }, {
+                "id": 9,
+                "name": "PEN.01",
+                "note": "Penhouse,...",
+                "floor": 5,
+                "thumbnail": "image/penhouse.jpg",
+                "roomType_id": 6
+            }, {
+                "id": 10,
+                "name": "PEN.02",
+                "note": "Penhouse,...",
+                "floor": 6,
+                "thumbnail": "image/penhouse.jpg",
+                "roomType_id": 6
+            }]
 
+        for r in rooms:
+            room = Room(**r)
+            db.session.add(room)
+
+        db.session.commit()
 
 

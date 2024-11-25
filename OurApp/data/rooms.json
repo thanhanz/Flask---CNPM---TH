@@ -1,0 +1,73 @@
+[{
+  "id": 1,
+  "name": "ST.01",
+  "note": "A small, self-contained room, often including a kitchenette,...",
+  "floor": 2,
+  "thumbnail": "image/stuRoom.jpg",
+  "roomType_id": 3
+}, {
+  "id": 2,
+  "name": "ST.02",
+  "note": "A small, self-contained room, often including a kitchenette,...",
+  "floor": 2,
+  "thumbnail": "image/stuRoom.jpg",
+  "roomType_id": 3
+}, {
+  "id": 3,
+  "name": "ST.03",
+  "note": "A small, self-contained room, often including a kitchenette,...",
+  "floor": 2,
+  "thumbnail": "image/stuRoom.jpg",
+  "roomType_id": 3
+}, {
+  "id": 4,
+  "name": "STAN.01",
+  "note": "Standard room,...",
+  "floor": 2,
+  "thumbnail": "image/staRoom.jpg",
+  "roomType_id": 4
+}, {
+  "id": 5,
+  "name": "STAN.02",
+  "note": "Standard room,...",
+  "floor": 3,
+  "thumbnail": "image/staRoom.jpg",
+  "roomType_id": 4
+}, {
+  "id": 6,
+  "name": "STAN.03",
+  "note": "Standard room,...",
+  "floor": 3,
+  "thumbnail": "image/staRoom.jpg",
+  "roomType_id": 4
+}, {
+  "id": 7,
+  "name": "PRE.01",
+  "note": "President room,...",
+  "floor": 7,
+  "thumbnail": "image/preRoom.jpg",
+  "roomType_id": 5
+}, {
+  "id": 8,
+  "name": "PRE.02",
+  "note": "President room,...",
+  "floor": 8,
+  "thumbnail": "image/preRoom2.jpg",
+  "roomType_id": 5
+}, {
+  "id": 9,
+  "name": "PEN.01",
+  "note": "Penhouse,...",
+  "floor": 5,
+  "thumbnail": "image/penhouse.jpg",
+  "roomType_id": 6
+}, {
+  "id": 10,
+  "name": "PEN.02",
+  "note": "Penhouse,...",
+  "floor": 6,
+  "thumbnail": "image/penhouse.jpg",
+  "roomType_id": 6
+}]
+
+

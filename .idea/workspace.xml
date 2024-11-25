@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8a89749-ce83-4ebb-9662-1bd07c83fbd4" name="Changes" comment="Adding new: Input form and Registration Form, Home page">
+    <list default="true" id="a8a89749-ce83-4ebb-9662-1bd07c83fbd4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/OurApp/data/rooms.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OurApp/data/roomstatus.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OurApp/data/roomtypes.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OurApp/static/image/penhouse.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OurApp/static/image/preRoom.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OurApp/static/image/preRoom2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OurApp/static/image/staRoom.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OurApp/static/image/stuRoom.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OurApp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OurApp/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/dao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OurApp/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/index.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OurApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OurApp/templates/layout/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/layout/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OurApp/templates/layout/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/layout/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OurApp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OurApp/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/register.html" afterDir="false" />
@@ -238,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732211105054</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Login - Logout">
+      <option name="closed" value="true" />
+      <created>1732437215906</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732437215906</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -255,6 +269,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add structure off project" />
     <MESSAGE value="Adding new: Input form and Registration Form, Home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding new: Input form and Registration Form, Home page" />
+    <MESSAGE value="Login - Logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login - Logout" />
   </component>
 </project>

@@ -1,0 +1,13 @@
+[{
+  "id": 1,
+  "name": "Booked",
+  "description": "Room is booked"
+}, {
+  "id": 2,
+  "name": "In use",
+  "description": "Room is occupied"
+}, {
+  "id": 3,
+  "name": "Available",
+  "description": "The room available for rent"
+}]

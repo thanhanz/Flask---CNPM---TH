@@ -1,0 +1,30 @@
+[{
+        "id": 1,
+        "name": "Studio Room",
+        "description": "A small, self-contained room, often including a kitchenette,...",
+        "price": 400000,
+        "maxNumberOfCustomer": 3,
+        "thumbnail": ""
+
+    },  {
+        "id": 2,
+        "name": "Standard Room",
+        "description": "Private bathroom with shower or bathtub, Flat-screen TV with cable/satellite channels,...",
+        "price": 350000,
+        "maxNumberOfCustomer": 3,
+        "thumbnail": ""
+    }, {
+        "id": 3,
+        "name": "President Room",
+        "description": "Smart TV, premium cable channels, and entertainment system, in-room dining service and mini fridge,...",
+        "price": 2000000,
+        "maxNumberOfCustomer": 2,
+        "thumbnail": ""
+    }, {
+        "id": 4,
+        "name": "Penhouse",
+        "description": "The most luxurious suite in the hotel, view panoramic city,...",
+        "price": 5000000,
+        "maxNumberOfCustomer": 8,
+        "thumbnail": ""
+}]

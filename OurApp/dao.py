@@ -1,10 +1,26 @@
 #ADD FUNCTION TO QUERY HERE
 
 import hashlib
-from OurApp.models import User, Account, Customer
+from idlelib.query import Query
+
+from OurApp.models import User, Account, Customer, RoomType, Room
 from OurApp import db
 import cloudinary.uploader
 from flask_login import login_user, logout_user
+
+
+def load_list_roomtypes():
+    return RoomType.query.all()
+
+def load_list_room(roomtypes_id=None, page=1):
+    query = RoomType.query
+
+    if roomtypes_id:
+        query = query.filter(Room.roomType_id==roomtypes_id)
+
+    return query.all()
+
+
 def add_user(firstName, lastName, phoneNumber, citizenIdentificationCard, gender, dateOfBirth, email, avatar=None):
 
     customer = Customer(firstName = firstName.strip(),
@@ -13,8 +29,7 @@ def add_user(firstName, lastName, phoneNumber, citizenIdentificationCard, gender
                 dateOfBirth=dateOfBirth,
                 phoneNumber = phoneNumber.strip(),
                 citizenIdentificationCard = citizenIdentificationCard.strip(),
-                email =email.strip(),
-                )
+                email =email.strip())
 
     if avatar:
         res = cloudinary.uploader.upload(avatar)
