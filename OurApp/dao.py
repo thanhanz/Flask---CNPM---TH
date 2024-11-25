@@ -10,15 +10,16 @@ from flask_login import login_user, logout_user
 
 
 def load_list_roomtypes():
+
     return RoomType.query.all()
 
 def load_list_room(roomtypes_id=None, page=1):
-    query = RoomType.query
+    rooms = Room.query.filter(Room.active.__eq__(True))
 
     if roomtypes_id:
-        query = query.filter(Room.roomType_id==roomtypes_id)
+            rooms = Room.query.filter(Room.roomType_id.__eq__(roomtypes_id))
 
-    return query.all()
+    return rooms.all()
 
 
 def add_user(firstName, lastName, phoneNumber, citizenIdentificationCard, gender, dateOfBirth, email, avatar=None):

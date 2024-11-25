@@ -1,6 +1,5 @@
 #APP "/endpoint" here
 import sys
-
 from OurApp.dao import check_login, get_customer_by_id
 
 sys.path.append(".")
@@ -15,8 +14,9 @@ from flask_login import login_user, logout_user, current_user
 @app.route("/")
 def home():
     rts = dao.load_list_roomtypes()
+    rooms = dao.load_list_room()
 
-    return render_template('index.html', roomtypes=rts)
+    return render_template('index.html', roomtypes=rts, rooms=rooms)
 
 @app.route("/login", methods=['GET', 'POST'])
 def user_login():

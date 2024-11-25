@@ -4,7 +4,31 @@
 
 {% block content %}
 
-<h1 class>Welcome to my Website!</h1>
+<h1 class>The most common rooms.</h1>
+
+<section id="gallery" >
+  <div class="container">
+    <div class="row">
+        {% for r in rooms %}
+        <div class="col-lg-3 mb-3">
+            <div class="card" style="background-color: #eee;">
+              <img src="{{ url_for('static', filename=r.thumbnail) }}" alt="" class="card-img-top w-100" style="height: 300px; object-fit: cover;" >
+
+                <div class="card-body ">
+                    <h5 class="card-title"><i>{{ r.roomType.name }}</i></h5>
+                    <h4 class="card-title text-right "><b>${{ "{:,.0f}".format(r.roomType.price)}}</b></h4>
+                    <p class="card-text">{{ r.note }}</p>
+                    <a href="" class="btn btn-outline-success btn-sm">View details</a>
+                    <a href="" class="btn btn-outline-warning btn-sm"><i class="far fa-heart">Book now</i></a>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+
+
 
 {% endblock %}
 

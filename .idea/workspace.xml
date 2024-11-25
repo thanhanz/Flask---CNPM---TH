@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8a89749-ce83-4ebb-9662-1bd07c83fbd4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OurApp/data/rooms.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/data/roomstatus.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/data/roomtypes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/static/image/penhouse.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/static/image/preRoom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/static/image/preRoom2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/static/image/staRoom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OurApp/static/image/stuRoom.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OurApp/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/dao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OurApp/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OurApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OurApp/templates/layout/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/layout/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OurApp/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OurApp/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
