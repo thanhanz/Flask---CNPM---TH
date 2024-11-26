@@ -4,7 +4,7 @@ import hashlib
 from idlelib.query import Query
 
 from OurApp.models import User, Account, Customer, RoomType, Room
-from OurApp import db
+from OurApp import db, app
 import cloudinary.uploader
 from flask_login import login_user, logout_user
 
@@ -19,7 +19,20 @@ def load_list_room(roomtypes_id=None, page=1):
     if roomtypes_id:
             rooms = Room.query.filter(Room.roomType_id.__eq__(roomtypes_id))
 
+    page_size = app.config.get('PAGE_SIZE')
+    start = (page - 1) * page_size
+    rooms = rooms.slice(start, start + page_size)
+
     return rooms.all()
+
+
+def count_rooms(roomtypes_id=None):
+    rooms = Room.query.filter(Room.active.__eq__(True)).count()
+
+    if roomtypes_id:
+        rooms = Room.query.filter(Room.roomType_id.__eq__(roomtypes_id) and Room.active.__eq__(True)).count()
+
+    return rooms
 
 
 def add_user(firstName, lastName, phoneNumber, citizenIdentificationCard, gender, dateOfBirth, email, avatar=None):

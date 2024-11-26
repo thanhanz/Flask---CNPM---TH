@@ -15,6 +15,9 @@ db = SQLAlchemy()
 db.init_app(app)
 migrate=Migrate(app, db)
 login = LoginManager(app=app)
+app.config['PAGE_SIZE'] = 8
+app.config['COMMENT_SIZE'] = 3
+
 
 cloudinary.config(
     cloud_name = "dc0apkpb1",

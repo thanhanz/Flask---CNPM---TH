@@ -29,7 +29,7 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Rooms</a>
            <ul class="dropdown-menu">
              {% for rt in roomtypes %}
-              <li><a class="dropdown-item" href="">{{ rt.name }}</a></li>
+              <li><a class="dropdown-item" href="/?roomtypes_id={{ rt.id }}">{{ rt.name }}</a></li>
              {% endfor %}
           </ul>
         </li>

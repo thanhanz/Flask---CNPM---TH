@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8a89749-ce83-4ebb-9662-1bd07c83fbd4" name="Changes" comment="">
+    <list default="true" id="a8a89749-ce83-4ebb-9662-1bd07c83fbd4" name="Changes" comment="Them card">
+      <change afterPath="$PROJECT_DIR$/OurApp/templates/room_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OurApp/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/dao.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OurApp/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OurApp/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OurApp/templates/layout/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/OurApp/templates/layout/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732437215906</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Them card">
+      <option name="closed" value="true" />
+      <created>1732557375680</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732557375680</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,6 +271,7 @@
     <MESSAGE value="add structure off project" />
     <MESSAGE value="Adding new: Input form and Registration Form, Home page" />
     <MESSAGE value="Login - Logout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login - Logout" />
+    <MESSAGE value="Them card" />
+    <option name="LAST_COMMIT_MESSAGE" value="Them card" />
   </component>
 </project>

@@ -1,4 +1,5 @@
 #APP "/endpoint" here
+import math
 import sys
 from OurApp.dao import check_login, get_customer_by_id
 
@@ -13,10 +14,19 @@ from flask_login import login_user, logout_user, current_user
 
 @app.route("/")
 def home():
-    rts = dao.load_list_roomtypes()
-    rooms = dao.load_list_room()
 
-    return render_template('index.html', roomtypes=rts, rooms=rooms)
+    rts = dao.load_list_roomtypes()
+    roomtypes_id = request.args.get('roomtypes_id', None)
+    page = request.args.get('page', 1)
+    rooms = dao.load_list_room(roomtypes_id=roomtypes_id, page=int(page))
+    total_rooms = dao.count_rooms(roomtypes_id=roomtypes_id)
+
+    page_sz = app.config.get('PAGE_SIZE')
+    pages = math.ceil(total_rooms/page_sz)
+    print(pages)
+
+    return render_template('index.html', roomtypes=rts, rooms=rooms,
+                           pages=math.ceil(total_rooms/page_sz), current_page=int(page))
 
 @app.route("/login", methods=['GET', 'POST'])
 def user_login():
